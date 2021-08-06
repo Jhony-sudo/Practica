@@ -7,7 +7,6 @@ public enum Identificador {
     private char Carac;
     private String Identificador;
     private String Penalizacion;
-    
     private Identificador(int Numero){
         this.Num = Numero;
     }

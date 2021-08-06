@@ -12,11 +12,22 @@ public class Asignacion {
     
     public void Recorrer(){
         int Longitud = Cadena.length();
+        int NumeroTokens = 1;
+        for(int i =0;i<=Longitud;i++){
+            if(esEspacio(Cadena.charAt(i))){
+                NumeroTokens ++;
+            }
+        }
+        
         char [] Letras = new char [Longitud];
         for(int i = 0;i<= Longitud;i++){
             char Simbolo = Cadena.charAt(i);
             if(esLetra(Simbolo)){
                 Identificador P1 = Identificador.Numero;
+            }
+            
+            if(esNumero(Simbolo)){
+                
             }
         }
     }
