@@ -1,13 +1,15 @@
 
 package reconocimiento;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class Asignacion {
     private String Cadena;
     private Identificador Asignar [];
-    
-    public Asignacion(String Cadena, JTextArea Tabla){
+    private JTextField Cuadro;
+    public Asignacion(String Cadena, JTextField Cuadro){
         this.Cadena = Cadena;
+        this.Cuadro = Cuadro;
+        Cuadro.setText("Hola Mundo");
     }
     
     public void Recorrer(){

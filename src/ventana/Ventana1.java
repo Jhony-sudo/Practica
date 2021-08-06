@@ -5,6 +5,8 @@
  */
 package ventana;
 
+import reconocimiento.Asignacion;
+
 /**
  *
  * @author ROM
@@ -102,7 +104,7 @@ public class Ventana1 extends javax.swing.JFrame {
     }//GEN-LAST:event_A2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           // TODO add your handling code here:
+           Asignacion Revisar = new Asignacion(A1.getText(),A2);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
