@@ -9,29 +9,33 @@ public class Asignacion {
     public Asignacion(String Cadena, JTextField Cuadro){
         this.Cadena = Cadena;
         this.Cuadro = Cuadro;
-        Cuadro.setText("Hola Mundo");
+        
     }
     
     public void Recorrer(){
+        String Mensaje = "";
         int Longitud = Cadena.length();
         int NumeroTokens = 1;
         for(int i =0;i<=Longitud;i++){
             if(esEspacio(Cadena.charAt(i))){
                 NumeroTokens ++;
-            }
-        }
-        
-        char [] Letras = new char [Longitud];
-        for(int i = 0;i<= Longitud;i++){
-            char Simbolo = Cadena.charAt(i);
-            if(esLetra(Simbolo)){
-                Identificador P1 = Identificador.Numero;
-            }
+                for(int x=0;x<i;i++){
+                    if(esLetra(Cadena.charAt(x))){
+                        Mensaje = Mensaje + "Letra" + Cadena.charAt(x);
+                    }
+                    if(esNumero(Cadena.charAt(x))){
+                    }
+                    if(esSimbolo(Cadena.charAt(x))){
+                    }
+                }
             
-            if(esNumero(Simbolo)){
-                
+            } 
+            else{
+            
             }
         }
+        Cuadro.setText(Mensaje);
+        
     }
     
     public boolean esLetra(char Entrada){
@@ -54,8 +58,17 @@ public class Asignacion {
         return res;
     }
     
-    public boolean esSimbolo(){
-      return false;  
+    public boolean esSimbolo(char Entrada){
+        boolean res = false;
+        for(int i=33;i<=126;i++){
+            int Numero = i;
+            char Letra = (char) Numero;
+            if(Letra == Numero && (!esLetra(Letra)|!esNumero(Letra)|!esEspacio(Letra))){
+                res = true;
+            }
+        }
+        return res; 
+      
     }
     
     public boolean esEspacio(char Entrada){
