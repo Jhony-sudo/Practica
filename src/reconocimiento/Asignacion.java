@@ -13,7 +13,10 @@ public class Asignacion {
     }
     
     public void Recorrer(){
-        String Mensaje = "a";
+        String Mensaje = "Letras ";
+        String Id = "ID ";
+        String Numero = "Numeros ";
+        String Simbolo = "Simbolos ";
         int Longitud = Cadena.length();
         System.out.println(Longitud);
         int NumeroTokens = 1;
@@ -24,25 +27,31 @@ public class Asignacion {
                     System.out.println("Entre");
                     if(esLetra(Cadena.charAt(x))){
                         System.out.println("Entre Letra");
-                         Mensaje = Mensaje + "Letra " + Cadena.charAt(x);
+                         Mensaje = Mensaje + Cadena.charAt(x);
                     }
                     if(esNumero(Cadena.charAt(x))){
                         System.out.println("Entre Numero");
-                        Mensaje = Mensaje + "Numero " + Cadena.charAt(x);
+                        Numero = Numero  + Cadena.charAt(x) ;
                     }
                     if(esSimbolo(Cadena.charAt(x))){
                         System.out.println("Entre Simbolo");
-                        Mensaje = Mensaje + "Simbolo " + Cadena.charAt(x) + "\n";
+                        Simbolo = Simbolo +  Cadena.charAt(x);
                     }
                 }
             
             } 
             else{
+                if(esLetra(Cadena.charAt(0)) && i == (Longitud - 1)){
+                    for(int x=0;x<Longitud;x++){
+                        Id = Id + Cadena.charAt(x);
+                    }
+                }
             
             }
         }
         System.out.println("Antes del mensaje");
         System.out.println(Mensaje);
+        Mensaje = Mensaje + "\n" + Numero + "\n" + Simbolo + "\n" + Id + "\n";
         Cuadro.setText(Mensaje);
         
     }
