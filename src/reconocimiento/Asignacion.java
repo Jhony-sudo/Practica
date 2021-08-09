@@ -1,31 +1,38 @@
 
 package reconocimiento;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 public class Asignacion {
     private String Cadena;
     private Identificador Asignar [];
-    private JTextField Cuadro;
-    public Asignacion(String Cadena, JTextField Cuadro){
+    private JTextArea Cuadro;
+    public Asignacion(String Cadena, JTextArea Cuadro){
         this.Cadena = Cadena;
         this.Cuadro = Cuadro;
         
     }
     
     public void Recorrer(){
-        String Mensaje = "";
+        String Mensaje = "a";
         int Longitud = Cadena.length();
+        System.out.println(Longitud);
         int NumeroTokens = 1;
-        for(int i =0;i<=Longitud;i++){
+        for(int i =0;i<Longitud;i++){
             if(esEspacio(Cadena.charAt(i))){
                 NumeroTokens ++;
-                for(int x=0;x<i;i++){
+                for(int x=0;x<i;x++){
+                    System.out.println("Entre");
                     if(esLetra(Cadena.charAt(x))){
-                        Mensaje = Mensaje + "Letra" + Cadena.charAt(x);
+                        System.out.println("Entre Letra");
+                         Mensaje = Mensaje + "Letra " + Cadena.charAt(x);
                     }
                     if(esNumero(Cadena.charAt(x))){
+                        System.out.println("Entre Numero");
+                        Mensaje = Mensaje + "Numero " + Cadena.charAt(x);
                     }
                     if(esSimbolo(Cadena.charAt(x))){
+                        System.out.println("Entre Simbolo");
+                        Mensaje = Mensaje + "Simbolo " + Cadena.charAt(x) + "\n";
                     }
                 }
             
@@ -34,6 +41,8 @@ public class Asignacion {
             
             }
         }
+        System.out.println("Antes del mensaje");
+        System.out.println(Mensaje);
         Cuadro.setText(Mensaje);
         
     }
@@ -62,8 +71,8 @@ public class Asignacion {
         boolean res = false;
         for(int i=33;i<=126;i++){
             int Numero = i;
-            char Letra = (char) Numero;
-            if(Letra == Numero && (!esLetra(Letra)|!esNumero(Letra)|!esEspacio(Letra))){
+            char Letra = Entrada;
+            if(Letra == Numero && (!esLetra(Letra)&& !esNumero(Letra)&& !esEspacio(Letra))){
                 res = true;
             }
         }
@@ -85,7 +94,7 @@ public class Asignacion {
         boolean res = false;
         for(int i=48;i<=57;i++){
             int Numero = i;
-            char Letra = (char) Numero;
+            char Letra = Entrada;
             
             if(Letra == Numero){
                 res = true;
